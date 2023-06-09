@@ -473,6 +473,9 @@ class VMWareHandler(SourceBase):
             if site_name is not None:
                 log.debug2(f"Found a matching cluster site for {object_name}, using site '{site_name}'")
 
+        if object_type == NBCluster and site_name is None:
+            return
+
         # set default site name
         if site_name is None:
             if object_type in NBCluster:
