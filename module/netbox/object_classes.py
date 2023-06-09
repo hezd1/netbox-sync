@@ -1461,7 +1461,7 @@ class NBCluster(NetBoxObject):
     name = "cluster"
     api_path = "virtualization/clusters"
     primary_key = "name"
-    secondary_key = "site"
+#   secondary_key = "site"
     prune = False
     # include_secondary_key_if_present = True
 
@@ -1472,7 +1472,7 @@ class NBCluster(NetBoxObject):
             "type": NBClusterType,
             "tenant": NBTenant,
             "group": NBClusterGroup,
-            "site": NBSite,
+#           "site": NBSite,
             "tags": NBTagList
         }
         super().__init__(*args, **kwargs)
