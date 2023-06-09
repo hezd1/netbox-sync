@@ -475,6 +475,9 @@ class VMWareHandler(SourceBase):
 
         # set default site name
         if site_name is None:
+            if object_type in NBCluster:
+                log.debug("Not settings a site for '{object_name}'")
+                return
             site_name = self.site_name
             log.debug(f"No site relation for '{object_name}' found, using default site '{site_name}'")
 
